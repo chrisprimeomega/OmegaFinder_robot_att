@@ -1,4 +1,4 @@
-# David ΩETF Robot
+# ΩDavid Robot
 
 ## Co to jest David ETF?
 Jest to cześć projektu David vs Goliath. W skrócie polega ona na tym, że inwestuję w kryptowaluty o mcap z przedziału 1 do 5 mln (David) oraz tych z największym mcap (Goliath). Więcej o projekcie tutaj
@@ -38,7 +38,8 @@ taki sam jak w pierwszym użyciu w tym, że nowe krypto są dopisywane w istniej
 3 > 4 > 5 > 1 > 2
 
 ## Work progress
-- [x] Let it work
+- [x] Let it work.
+- [x] Make it look more pro. Extracting stages into separate sequences to make further improvements easier to implement.
 - [ ] saves after stages 3 and 4 - these are the most time-consuming steps, especially during the first use, so adding the ability to _save_ work after them and return to them the next time the robot is turned on, seems justified
 - [ ] saves during steps 4 and 5 - so you can return to your work the next time the robot is turned on
 - [ ] reducing the number of activities to a minimum
