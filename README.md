@@ -1,7 +1,7 @@
-# ΩDavid Robot
+# ΩFinder
 
-## Co to jest David ETF?
-Jest to cześć projektu David vs Goliath. W skrócie polega ona na tym, że inwestuję w kryptowaluty o mcap z przedziału 1 do 5 mln (David) oraz tych z największym mcap (Goliath). Więcej o projekcie tutaj
+## What is(will be) ΩFinder?
+This will be a tool to support me in finding cryptocurrencies worth investing in. Currently it will be adapted to the David part of my David vs Goliath project but I might make them more universal in the future.
 
 ## Do czego służy robot?
 Kryptowalut o mcap 1 do 5 mln jest około 1 tys. Więc samodzielne ich przeglądanie zajęłoby mnóstwo czasu a jeżeli czytałeś co napisałem na mojej głównej stronie to wiesz, że czas dla mnie jest najważniejszym zasobem. Zadaniem robota jest skrócenie czasu jaki poświęcę na szukanie odpowiednich projektów, poprzez odrzucenie jak największej ich liczby na podstawie moich subiektywnych kryteriów. Na obiektywne kryteria nie wpadłem i wątpię, że takowe istnieją w przypadku takich projektów.
@@ -34,13 +34,15 @@ _Why Excel?_ because the data from the Final tab will be used later in the David
 **Output**
 taki sam jak w pierwszym użyciu w tym, że nowe krypto są dopisywane w istniejących już zakładkach pliku Excel.
 
+### Resume _saved_ work
+
 ## Time consumption of stages:
 3 > 4 > 5 > 1 > 2
 
 ## Work progress
 - [x] Let it work.
 - [x] Make it look more pro. Extracting stages into separate sequences to make further improvements easier to implement.
-- [ ] saves after stages 3 and 4 - these are the most time-consuming steps, especially during the first use, so adding the ability to _save_ work after them and return to them the next time the robot is turned on, seems justified
+- [x] Saves after stages 3 and 4 - these are the most time-consuming steps, especially during the first use, so adding the ability to _save_ work after them and return to them, the next time ΩFinder is turned on, seems justified
 - [ ] saves during steps 4 and 5 - so you can return to your work the next time the robot is turned on
 - [ ] reducing the number of activities to a minimum
 
