@@ -1,11 +1,10 @@
 # ΩFinder
 
 ## What is(will be) ΩFinder?
-This will be a tool to support me in finding cryptocurrencies worth investing in. Currently it will be adapted to the David part of my David vs Goliath project but I might make them more universal in the future.
-
-## Do czego służy robot?
-Kryptowalut o mcap 1 do 5 mln jest około 1 tys. Więc samodzielne ich przeglądanie zajęłoby mnóstwo czasu a jeżeli czytałeś co napisałem na mojej głównej stronie to wiesz, że czas dla mnie jest najważniejszym zasobem. Zadaniem robota jest skrócenie czasu jaki poświęcę na szukanie odpowiednich projektów, poprzez odrzucenie jak największej ich liczby na podstawie moich subiektywnych kryteriów. Na obiektywne kryteria nie wpadłem i wątpię, że takowe istnieją w przypadku takich projektów.
-Robot ma wykonać zadanie jak najprościej i być dostosowany do moich obecnych umiejętności.
+This will be a tool to support me in finding cryptocurrencies worth investing in. Currently it will be adapted to the David part of my David vs Goliath project but I might make it more universal in the future.<br>
+For now it looking for cryptocurrencies with market cap between 1 and 5 mln USD, of which there are about a thousand. Going through them on your own would take a lot of time and if you've read what I wrote on my main readme, you know that time is the most important resource for me. <br>
+The robot's task is to shorten the time I spend looking for suitable projects by rejecting as many of them as possible based on my subjective criteria. I haven't come up with any objective criteria and I doubt they exist for such projects.<br>
+The robot must perform the task as simply and quickly as possible. As my skills improve, I will likely upgrade the robot as well.
 
 ## What should the robot do?
 ### First use
