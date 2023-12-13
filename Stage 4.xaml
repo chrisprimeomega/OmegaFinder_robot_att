@@ -1,7 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="MainFlow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="dt_3_Final" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="str_ResumeStage" Type="InOutArgument(x:String)" />
     <x:Property Name="str_SaveWork" Type="OutArgument(x:String)" />
     <x:Property Name="str_SheetName" Type="OutArgument(x:String)" />
     <x:Property Name="int_StageCompleted" Type="OutArgument(x:Int32)" />
@@ -9,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869.6,3402.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>869.6,3308</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MainFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,19 +124,19 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainFlow" sap:VirtualizedContainerService.HintSize="616.8,3337.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Stage 4" sap:VirtualizedContainerService.HintSize="568.8,3243.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Cryptocurrency Prices, Charts, and Crypto Market Cap | CoinGecko" sap:VirtualizedContainerService.HintSize="554.4,2476" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="402b7412-1997-4899-b080-31448591750b" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Cryptocurrency Prices, Charts, and Crypto Market Cap | CoinGecko" sap:VirtualizedContainerService.HintSize="506.4,2350.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="402b7412-1997-4899-b080-31448591750b" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472.8,2259.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do - Stage 4" sap:VirtualizedContainerService.HintSize="472.8,2133.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,7 +145,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Chart" DataTable="[dt_3_Final]" DisplayName="Add Data Column - Chart" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9" />
             <ui:LogMessage DisplayName="Log Message - Chart" sap:VirtualizedContainerService.HintSize="410.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Charts review begins&quot;]" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_3_Final]" DisplayName="For Each Row in Data Table - Young" sap:VirtualizedContainerService.HintSize="410.4,1404" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_3_Final]" DisplayName="For Each Row in Data Table - Chart" sap:VirtualizedContainerService.HintSize="410.4,1404" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -161,8 +160,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGoToUrl DisplayName="Go To URL - Young" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[CurrentRow.item(1).toString]" Version="V3" />
-                    <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayBefore="2" DisplayName="Click 'Max' - Young" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Version="V3">
+                    <uix:NGoToUrl DisplayName="Go To URL - Chart" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[CurrentRow.item(1).toString]" Version="V3" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayBefore="2" DisplayName="Click 'Max' - Chart" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.coingecko.com/en/coins/six-network" CvElementArea="1091, 773, 69, 43" CvTextArea="1106, 786, 37, 17" CvTextArgument="Max" CvType="Button" DesignTimeRectangle="1092, 492, 67, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Max'" FullSelectorArgument="&lt;webctrl aaname='Max' parentid='general-tab-content' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Max' parentid='general-tab-content' tag='BUTTON' type='' class='tw-bg-white dark:tw-bg-white dark:tw-bg-opacity-5 dark:tw-text-white tw-h-8 tw--ml-px tw-relative tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-rounded-r-md tw-border-solid tw-border tw-cursor-pointer tw-border-gray-300 tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 dark:hover:tw-bg-opacity-10 focus:tw-z-10 focus:tw-outline-none focus:tw-bg-gray-200 dark:tw-border-opacity-10 dark:focus:tw-bg-opacity-10 dark:hover:tw-text-white graph-stats-btn graph-stats-btn-max' check:innerText='Max' /&gt;" Guid="ff0e429f-4b42-4bbc-a501-fcb4bb114d98" InformativeScreenshot="d77264202dd73ba2582240d35ec38807.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='SIX Network Price: SIX Live Price Chart &amp;amp; News | CoinGecko' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -173,7 +172,7 @@
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NMouseScroll KeyModifiers="{x:Null}" ContinueOnError="True" Direction="Down" DisplayName="Mouse Scroll - Young" sap:VirtualizedContainerService.HintSize="333.6,238.4" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Version="V3">
+                    <uix:NMouseScroll KeyModifiers="{x:Null}" ContinueOnError="True" Direction="Down" DisplayName="Mouse Scroll - Chart" sap:VirtualizedContainerService.HintSize="333.6,238.4" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Version="V3">
                       <uix:NMouseScroll.SearchedElement>
                         <uix:SearchedElement>
                           <uix:SearchedElement.Target>
@@ -185,12 +184,12 @@
                         </uix:SearchedElement>
                       </uix:NMouseScroll.SearchedElement>
                     </uix:NMouseScroll>
-                    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Young" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="YES or NO" OptionsString="YES;NO" Title="Chart Decision">
+                    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Chart" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="YES, NO" OptionsString="YES;NO" Title="Chart Decision">
                       <ui:InputDialog.Result>
                         <OutArgument x:TypeArguments="x:String">[str_ChartDecision]</OutArgument>
                       </ui:InputDialog.Result>
                     </ui:InputDialog>
-                    <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Chart" DisplayName="Update Row Item - Young" sap:VirtualizedContainerService.HintSize="333.6,192.8" sap2010:WorkflowViewState.IdRef="UpdateRowItem_5" Row="[CurrentRow]" Value="[str_ChartDecision]" />
+                    <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Chart" DisplayName="Update Row Item - Chart" sap:VirtualizedContainerService.HintSize="333.6,192.8" sap2010:WorkflowViewState.IdRef="UpdateRowItem_5" Row="[CurrentRow]" Value="[str_ChartDecision]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
@@ -214,7 +213,6 @@
                 </scg:List>
               </ui:FilterDataTable.SelectColumns>
             </ui:FilterDataTable>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="410.4,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[dt_3_Final.RowCount.ToString + &quot; coins to final review&quot;]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -228,7 +226,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[str_SaveWork = &quot;&quot;]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="554.4,521.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Loop to be sure that user click YES or NO" Condition="[str_SaveWork = &quot;&quot;]" DisplayName="Do While - Save Work" sap:VirtualizedContainerService.HintSize="506.4,552.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376.8,384.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
@@ -236,7 +234,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[dt_3_Final.RowCount.ToString + &quot; charts to review. Do you want to save your work now and come back later?&quot;+VbCrLf+&quot;Yes - Workflow will be terminated and and you can return to this step next time&quot;+VbCrLf+&quot;NO - Workflow will be continue&quot;]" OptionsString="YES;NO" Title="Save your work">
+          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Save Work" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[dt_3_Final.RowCount.ToString + &quot; charts to review. Do you want to save your work now and come back later?&quot;+VbCrLf+&quot;Yes - Workflow will be terminated and and you can return to this step next time&quot;+VbCrLf+&quot;NO - Workflow will be continue&quot;]" OptionsString="YES;NO" Title="Save your work">
             <ui:InputDialog.Result>
               <OutArgument x:TypeArguments="x:String">[str_SaveWork]</OutArgument>
             </ui:InputDialog.Result>
@@ -247,10 +245,11 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleDoWhile>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="554.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="506.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">

@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869.6,2897.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>869.6,2208.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MainFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,14 +121,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainFlow" sap:VirtualizedContainerService.HintSize="568.8,2144" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="ExcelExist" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_2_1to5OLD" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_1_RawData" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_2_1to5" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_3_Young" />
-    </Sequence.Variables>
+  <Sequence DisplayName="Stage 5" sap:VirtualizedContainerService.HintSize="568.8,2144" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -140,7 +133,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472.8,1657.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do - Stage 5" sap:VirtualizedContainerService.HintSize="472.8,1657.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -149,7 +142,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Final" DataTable="[dt_3_Final]" DisplayName="Add Data Column - Final" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9" />
             <ui:LogMessage DisplayName="Log Message - Final" sap:VirtualizedContainerService.HintSize="410.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Final review begins&quot;]" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_3_Final]" DisplayName="For Each Row in Data Table - Chart" sap:VirtualizedContainerService.HintSize="410.4,928" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_3_Final]" DisplayName="For Each Row in Data Table - Final" sap:VirtualizedContainerService.HintSize="410.4,928" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -157,7 +150,6 @@
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376.8,740" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="str_ChartDecision" />
                       <Variable x:TypeArguments="x:String" Name="str_FinalDecision" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
@@ -165,8 +157,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGoToUrl DisplayName="Go To URL - Chart" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Url="[CurrentRow.item(1).toString]" Version="V3" />
-                    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Chart" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="YES or NO" OptionsString="YES;NO" Title="Final Decision">
+                    <uix:NGoToUrl DisplayName="Go To URL - Final" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Url="[CurrentRow.item(1).toString]" Version="V3" />
+                    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Final" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="YES or NO" OptionsString="YES;NO" Title="Final Decision">
                       <ui:InputDialog.Result>
                         <OutArgument x:TypeArguments="x:String">[str_FinalDecision]</OutArgument>
                       </ui:InputDialog.Result>
@@ -208,7 +200,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="506.4,117.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Final" sap:VirtualizedContainerService.HintSize="506.4,117.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">

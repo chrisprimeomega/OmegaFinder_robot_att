@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1346.4,4956</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1346.4,5260</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MainFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,46 +124,40 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainFlow" sap:VirtualizedContainerService.HintSize="1356.8,4891.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="ExcelExist" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_2_1to5OLD" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_1_RawData" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_5_Final" />
-    </Sequence.Variables>
+  <Sequence DisplayName="Stage 3" sap:VirtualizedContainerService.HintSize="1356.8,5195.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Cryptocurrency Prices, Charts, and Crypto Market Cap | CoinGecko" sap:VirtualizedContainerService.HintSize="1294.4,4779.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="402b7412-1997-4899-b080-31448591750b" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Use Browser Edge: Cryptocurrency Prices, Charts, and Crypto Market Cap | CoinGecko" sap:VirtualizedContainerService.HintSize="1294.4,5083.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="402b7412-1997-4899-b080-31448591750b" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1260.8,4562.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1260.8,4826.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="StartDate" DataTable="[dt_2_1to5]" DisplayName="Add Data Column - StartDate" sap:VirtualizedContainerService.HintSize="1198.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
-            <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="I will need it to connect to Coingecko api at the final stage of the project, to perform analyzes and create a dashboard." ColumnName="API" DataTable="[dt_2_1to5]" DisplayName="Add Data Column - API" sap:VirtualizedContainerService.HintSize="1198.4,248" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4">
+            <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="StartDate" DataTable="[dt_2_1to5]" DefaultValue="{x:Null}" DisplayName="Add Data Column - StartDate" sap:VirtualizedContainerService.HintSize="1198.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" MaxLength="{x:Null}" Unique="{x:Null}" />
+            <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" sap2010:Annotation.AnnotationText="I will need it to connect to Coingecko api at the final stage of the project, to perform analyzes and create a dashboard." AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="API" DataTable="[dt_2_1to5]" DefaultValue="{x:Null}" DisplayName="Add Data Column - API" sap:VirtualizedContainerService.HintSize="1198.4,248" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" MaxLength="{x:Null}" Unique="{x:Null}">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:AddDataColumn>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_2_1to5]" DisplayName="For Each Row in Data Table - 1to5mln" sap:VirtualizedContainerService.HintSize="1198.4,2948" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" sap2010:Annotation.AnnotationText="" CurrentIndex="{x:Null}" DataTable="[dt_2_1to5]" DisplayName="For Each Row in Data Table - 1to5mln" sap:VirtualizedContainerService.HintSize="1198.4,3180.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1" MaxIterations="{x:Null}" Values="{x:Null}">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1164.8,2760" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1164.8,2961.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_StartDate" />
                       <Variable x:TypeArguments="x:String" Name="str_API" />
@@ -173,8 +167,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGoToUrl DisplayName="Go To URL - 1to5 CoinURL" sap:VirtualizedContainerService.HintSize="1121.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[CurrentRow.item(1).toString]" Version="V3" />
-                    <uix:NCheckState DisplayName="Check App State 'Preview Only'" sap:VirtualizedContainerService.HintSize="1121.6,2082.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Timeout="1" Version="V3">
+                    <uix:NGoToUrl ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Go To URL - 1to5 CoinURL" sap:VirtualizedContainerService.HintSize="1121.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" Timeout="{x:Null}" Url="[CurrentRow.item(1).toString]" Version="V3" />
+                    <uix:NCheckState ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Check App State 'Preview Only'" Exists="{x:Null}" sap:VirtualizedContainerService.HintSize="1121.6,2284" sap2010:WorkflowViewState.IdRef="NCheckState_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" Result="{x:Null}" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Timeout="1" Version="V3">
                       <uix:NCheckState.IfExists>
                         <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,320" sap2010:WorkflowViewState.IdRef="Sequence_20">
                           <sap:WorkflowViewStateService.ViewState>
@@ -182,7 +176,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign DisplayName="Assign - StarDate target appears" sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_4">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[str_StartDate]</OutArgument>
                             </Assign.To>
@@ -190,26 +184,29 @@
                               <InArgument x:TypeArguments="x:String">0000</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign DisplayName="Assign - API target appears" sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_5">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[str_API]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:String">
-                                <Literal x:TypeArguments="x:String" Value="" />
+                                <Literal x:TypeArguments="x:String">
+                                  <Literal.Result>
+                                    <OutArgument x:TypeArguments="x:String" />
+                                  </Literal.Result></Literal>
                               </InArgument>
                             </Assign.Value>
                           </Assign>
                         </Sequence>
                       </uix:NCheckState.IfExists>
                       <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="572.8,1864" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="572.8,2065.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NMouseScroll KeyModifiers="{x:Null}" sap2010:Annotation.AnnotationText="Without this, next activitie not always work as I want." Direction="Down" DisplayName="Mouse Scroll - 1to5" sap:VirtualizedContainerService.HintSize="510.4,269.6" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Version="V3">
+                          <uix:NMouseScroll sap2010:Annotation.AnnotationText="Without this, next activitie not always work as I want." ContinueOnError="True" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Direction="Down" DisplayName="Mouse Scroll - 1to5" sap:VirtualizedContainerService.HintSize="510.4,269.6" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="HardwareEvents" KeyModifiers="{x:Null}" MovementUnits="10" OutUiElement="{x:Null}" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Timeout="{x:Null}" Version="V3">
                             <uix:NMouseScroll.SearchedElement>
                               <uix:SearchedElement>
                                 <uix:SearchedElement.Target>
@@ -226,9 +223,9 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NMouseScroll>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510.4,388.8" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                          <TryCatch DisplayName="Try Catch - Max button" sap:VirtualizedContainerService.HintSize="510.4,388.8" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                             <TryCatch.Try>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'Max' - 1to5" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Version="V3">
+                              <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="2" DisplayName="Click 'Max' - 1to5" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Timeout="{x:Null}" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://www.coingecko.com/en/coins/carbon-credit" CvElementArea="1091, 552, 69, 42" CvTextArea="1106, 565, 37, 17" CvTextArgument="Max" CvType="Button" DesignTimeRectangle="1092, 537, 67, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Max'" FullSelectorArgument="&lt;webctrl aaname='Max' parentid='general-tab-content' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Max' parentid='general-tab-content' tag='BUTTON' type='' class='tw-bg-white dark:tw-bg-white dark:tw-bg-opacity-5 dark:tw-text-white tw-h-8 tw--ml-px tw-relative tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-rounded-r-md tw-border-solid tw-border tw-cursor-pointer tw-border-gray-300 tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 dark:hover:tw-bg-opacity-10 focus:tw-z-10 focus:tw-outline-none focus:tw-bg-gray-200 dark:tw-border-opacity-10 dark:focus:tw-bg-opacity-10 dark:hover:tw-text-white graph-stats-btn graph-stats-btn-max' check:innerText='Max' /&gt;" Guid="65f48552-dde9-45c8-b4b6-046bec8e9c39" InformativeScreenshot="09301a5c16241c3f65c0d1b4f7966454.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Carbon Credit Price: CCT Live Price Chart &amp;amp; News | CoinGecko' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
@@ -253,14 +250,14 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Not found Max button&quot;]" />
+                                  <ui:LogMessage DisplayName="Log Message - not found" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Not found Max button&quot;]" />
                                 </ActivityAction>
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510.4,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                          <TryCatch DisplayName="Try Catch - StartDate" sap:VirtualizedContainerService.HintSize="510.4,388.8" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                             <TryCatch.Try>
-                              <uix:NGetText DelayBefore="1" DisplayName="Get Text '→'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" TextString="[str_StartDate]" Version="V3">
+                              <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="1" DisplayName="Get Text '→'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" ScrapingOptions="{x:Null}" TextString="[str_StartDate]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
                                 <uix:NGetText.Target>
                                   <uix:TargetAnchorable BrowserURL="https://www.coingecko.com/en/coins/cropbytes" CvElementArea="914, 716, 97, 31" CvType="InputBox" DesignTimeRectangle="912, 655, 96, 20" DesignTimeScaleFactor="1.25" FriendlyName="'Nov 5, 2021'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg&amp;gt;g&amp;gt;g&amp;gt;g&amp;gt;text' idx='2' tag='text' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='text' /&gt;" Guid="fe78b707-7f6c-48fc-a163-83d31975b6c5" InformativeScreenshot="48f7939eea0cef507d6ba5fb8628f109.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='CropBytes Price: CBX Live Price Chart &amp;amp; News | CoinGecko' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
@@ -274,7 +271,7 @@
                               </uix:NGetText>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -285,7 +282,7 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                  <Assign DisplayName="Assign - StartDate" sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_1">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[str_StartDate]</OutArgument>
                                     </Assign.To>
@@ -297,9 +294,9 @@
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510.4,388.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                          <TryCatch DisplayName="Try Catch - API" sap:VirtualizedContainerService.HintSize="510.4,388.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                             <TryCatch.Try>
-                              <uix:NGetText DisplayName="Get Text 'API id'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" TextString="[str_API]" Version="V3">
+                              <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text 'API id'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_2" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" ScrapingOptions="{x:Null}" TextString="[str_API]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
                                 <uix:NGetText.Target>
                                   <uix:TargetAnchorable BrowserURL="https://www.coingecko.com/en/coins/pocketcoin" CvTextArea="1405, 482, 95, 21" CvType="AnyWordGroup" DesignTimeRectangle="1395, 471, 140, 40" DesignTimeScaleFactor="1.25" FriendlyName="'pocketcoin'" FullSelectorArgument="&lt;webctrl aaname=' pocketcoin  ' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' type='' class='tw-px-2.5 tw-py-1.5 tw-my-0.5 tw-mr-1 tw-rounded-md tw-text-sm tw-font-medium tw-bg-gray-100 tw-text-gray-800 hover:tw-bg-gray-200 dark:tw-text-white dark:tw-bg-white dark:tw-bg-opacity-10 dark:hover:tw-bg-opacity-20 dark:focus:tw-bg-opacity-20' /&gt;" Guid="c741cef2-30fa-4354-b1ee-24d11a72e168" InformativeScreenshot="fbf61be5e75c639035e42bf167d3aecd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Pocketcoin Price: PKOIN Live Price Chart &amp;amp; News | CoinGecko' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
@@ -323,13 +320,16 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                  <Assign DisplayName="Assign - API" sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_3">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[str_API]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="x:String">
-                                        <Literal x:TypeArguments="x:String" Value="" />
+                                        <Literal x:TypeArguments="x:String">
+                                          <Literal.Result>
+                                            <OutArgument x:TypeArguments="x:String" />
+                                          </Literal.Result></Literal>
                                       </InArgument>
                                     </Assign.Value>
                                   </Assign>
@@ -337,7 +337,7 @@
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <If Condition="[IsNumeric(Right(str_StartDate,4)) = False]" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_5">
+                          <If Condition="[IsNumeric(Right(str_StartDate,4)) = False]" DisplayName="If - numeric" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_5">
                             <If.Then>
                               <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -345,7 +345,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign DisplayName="Assign - StartDate if not numeric" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[str_StartDate]</OutArgument>
                                   </Assign.To>
@@ -376,6 +376,11 @@
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
             <ui:FilterDataTable sap2010:Annotation.AnnotationText="I only keep coins which have existed since 2021" DataTable="[dt_2_1to5]" DisplayName="Filter Data Table - Young" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1198.4,193.6" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_3_Final]" SelectColumnsMode="Remove">
               <ui:FilterDataTable.Filters>
@@ -401,7 +406,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:FilterDataTable>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[str_SaveWork = &quot;&quot;]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1198.4,521.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile sap2010:Annotation.AnnotationText="Loop to be sure that user click YES or NO" Condition="[str_SaveWork = &quot;&quot;]" CurrentIndex="{x:Null}" DisplayName="Do While - Save Work" sap:VirtualizedContainerService.HintSize="1198.4,552.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="{x:Null}">
               <ui:InterruptibleDoWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376.8,384.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
                   <sap:WorkflowViewStateService.ViewState>
@@ -409,15 +414,20 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="[dt_3_Final.RowCount.ToString + &quot; charts to review. Do you want to save your work now and come back later?&quot;+VbCrLf+&quot;Yes - Workflow will be terminated and and you can return to this step next time&quot;+VbCrLf+&quot;NO - Workflow will be continue&quot;]" OptionsString="YES;NO" Title="Save your work">
+                  <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Save Work" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="[dt_3_Final.RowCount.ToString + &quot; charts to review. Do you want to save your work now and come back later?&quot;+VbCrLf+&quot;Yes - Workflow will be terminated and and you can return to this step next time&quot;+VbCrLf+&quot;NO - Workflow will be continue&quot;]" OptionsString="YES;NO" Title="Save your work">
                     <ui:InputDialog.Result>
                       <OutArgument x:TypeArguments="x:String">[str_SaveWork]</OutArgument>
                     </ui:InputDialog.Result>
                   </ui:InputDialog>
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:InterruptibleDoWhile>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1198.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign DisplayName="Multiple Assign - Stage 3" sap:VirtualizedContainerService.HintSize="1198.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
