@@ -7,13 +7,13 @@ The robot's task is to shorten the time I spend looking for suitable projects by
 The robot must perform the task as simply and quickly as possible. As my skills improve, I will likely upgrade the robot as well.
 
 ## What should the robot do?
-### First use
+### First Full Use
 #### Includes five main stages
-1. 🤖 Pobranie danych z rankingu Coingecko - na każdej stronie rankingu jest 100 krypto, początek pobierania danych ustalam statycznie na konkretną stronę
-2. 🤖 Odrzucenie krypto z mcap większym niż 5mln i mniejszym niż 1mln - z uwagi że pobieranie następuje z naddatkiem, czyli mogą się w nim znaleźć krytpo z poza przedziału, to trzeba je odrzucić
-3. 🤖 Odrzucenie krypto powstałych przed 2021 - moim zdaniem jeśli projekt powstał ponad 3 lata temu i dalej ma tak mały mcap to jest mała szansa, że można na nim zarobić. Oczywiście zdaję sobię sprawę, że mogę przez to pominąć jakąś perełkę ale liczę się z tym.
-4. 👨‍💻 🤖 Manualne odrzucenie tylko na podstawie wykresu - sam odrzucam projekt oceniając tylko i wyłącznie jego całościowy wykres, rola robota to otwarcie strony projektu na Coingecko i wycentrowanie obrazu na maksymalny wykres oraz otworzenie popupu z opcjami YES NO
-5. 👨‍💻 🤖 Manualne odrzucenie na podstawie oceny projektu - tu już zagłębiam się bardziej w projekt, wchodzę na jego stronę, githuba, X itp. Robot ma za zadanie tylko ponownie otworzyć stronę na Coingecko i otworzyć YES/NO popup
+1. 🤖 Extracting data from the Coingecko ranking - there are 100 cryptocurrencies on each ranking page. I statically set the start of data extracting for a specific page.
+2. 🤖 Throwing out cryptos with mcap greater than 5 and less than 1mln - due to the fact that the extraction takes place with an excess, i.e. it may contain cryptos from outside the range that need to be thrown away
+3. 🤖 Throwing away cryptocurrencies created before 2021 - in my opinion, if the project was created over 3 years ago and still has such a small mcap, there is little chance that you can make money on it. Of course, I realize that I may miss some gems because of this, but I take it into account.
+4. 👨‍💻 🤖 Manual rejection only based on the chart - I throw the project myself, assessing only its overall chart, the robot's role is to open the project page on Coingecko and center the image on the maximum chart and open a popup with the YES NO options.
+5. 👨‍💻 🤖 Manual rejection based on project assessment - here I delve deeper into the project, go to its website, github, X, etc. The robot's task is only to reopen the page on Coingecko and open the YES/NO popup.
 
 **Output**<br>
 Excel file with two sheets
@@ -22,18 +22,19 @@ Excel file with two sheets
 
 _Why Excel?_ because the data from the Final tab will be used later in the David vs Goliath project, including creating a dashboard in Tableau. And with such a relatively small amount of data, this format will be easiest for me to use.
 
-6. 👨‍💻 Etap już niedotyczący robota a mianowicie następnego dnia, jeszcze raz przeglądam wybrane projekty i ostatecznie podejmuję decyzję które zostawić
+6. 👨‍💻 TA stage that no longer concerns the robot. The next day, I look through the selected projects again and finally decide which ones to keep
 
-### Kolejne użycia
-1. Etap 1 z pierwszego użycia
-2. Pobranie danych z pliku Excel z zakładki 1to5mlm
-3. Odrzucenie krypto które znajdują się już w zakładce 1to5mln
-4. Etapy 2-5(6) z pierwszego użycia
+### Next Full Use
+1. Stage 1
+2. Extracting data from an Excel file from the 1to5mln sheet
+3. Throwing out cryptos that are already in the 1to5mln sheet
+4. Stages 2-5(6)
 
 **Output**
-taki sam jak w pierwszym użyciu w tym, że nowe krypto są dopisywane w istniejących już zakładkach pliku Excel.
+The same as in the First Full Use, in that new cryptos are appended to the existing sheets of the Excel file.
 
 ### Resume _saved_ work
+The robot also has a function of saving work after the 3rd and 4th stage. If the user decides to save the work, when the robot is restarted, he will be able to return to the point where he finished.
 
 ## Time consumption of stages:
 3 > 4 > 5 > 1 > 2
@@ -42,6 +43,6 @@ taki sam jak w pierwszym użyciu w tym, że nowe krypto są dopisywane w istniej
 - [x] Let it work.
 - [x] Make it look more pro. Extracting stages into separate sequences to make further improvements easier to implement.
 - [x] Saves after stages 3 and 4 - these are the most time-consuming steps, especially during the first use, so adding the ability to _save_ work after them and return to them, the next time ΩFinder is turned on, seems justified
-- [ ] saves during steps 4 and 5 - so you can return to your work the next time the robot is turned on
-- [ ] reducing the number of activities to a minimum
+- [x] v1 released
+
 
