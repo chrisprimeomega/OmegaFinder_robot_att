@@ -22,7 +22,7 @@ Excel file with two sheets
 
 _Why Excel?_ because the data from the Final tab will be used later in the David vs Goliath project, including creating a dashboard in Tableau. And with such a relatively small amount of data, this format will be easiest for me to use.
 
-6. 👨‍💻 TA stage that no longer concerns the robot. The next day, I look through the selected projects again and finally decide which ones to keep
+6. 👨‍💻 Stage that no longer concerns the robot. The next day, I look through the selected projects again and finally decide which ones to keep
 
 ### Next Full Use
 1. Stage 1
