@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869.6,3308</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1140,3748</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MainFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,19 +124,19 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Stage 4" sap:VirtualizedContainerService.HintSize="568.8,3243.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Stage 4" sap:VirtualizedContainerService.HintSize="616.8,3683.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Cryptocurrency Prices, Charts, and Crypto Market Cap | CoinGecko" sap:VirtualizedContainerService.HintSize="506.4,2350.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="402b7412-1997-4899-b080-31448591750b" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Cryptocurrency Prices, Charts, and Crypto Market Cap | CoinGecko" sap:VirtualizedContainerService.HintSize="554.4,2790.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="402b7412-1997-4899-b080-31448591750b" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do - Stage 4" sap:VirtualizedContainerService.HintSize="472.8,2133.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do - Stage 4" sap:VirtualizedContainerService.HintSize="472.8,2573.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -144,16 +144,24 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Chart" DataTable="[dt_3_Final]" DisplayName="Add Data Column - Chart" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9" />
+            <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="I will need it to connect to Coingecko api at the final stage of the project, to perform analyzes and create a dashboard." ColumnName="API" DataTable="[dt_3_Final]" DisplayName="Add Data Column - API" sap:VirtualizedContainerService.HintSize="410.4,248" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:AddDataColumn>
             <ui:LogMessage DisplayName="Log Message - Chart" sap:VirtualizedContainerService.HintSize="410.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Charts review begins&quot;]" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_3_Final]" DisplayName="For Each Row in Data Table - Chart" sap:VirtualizedContainerService.HintSize="410.4,1404" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_3_Final]" DisplayName="For Each Row in Data Table - Chart" sap:VirtualizedContainerService.HintSize="410.4,1556" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376.8,1216" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376.8,1368" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_ChartDecision" />
+                      <Variable x:TypeArguments="x:String" Name="str_API" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -161,35 +169,35 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <uix:NGoToUrl DisplayName="Go To URL - Chart" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[CurrentRow.item(1).toString]" Version="V3" />
+                    <uix:NGetText DisplayName="Get Text 'API IDreality-metaverse'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" TextString="[str_API]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.coingecko.com/en/coins/reality-metaverse" CvTextArea="470, 672, 132, 18" CvType="AnyWordGroup" DesignTimeRectangle="459, 664, 180, 35" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'reality-metaverse'" FullSelectorArgument="&lt;webctrl aaname='   reality-metaverse   ' parentid='gecko-coin-page-container' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='gecko-coin-page-container' tag='BUTTON' type='button' class='tw-cursor-pointer tw-bg-gray-200 dark:tw-bg-moon-700 hover:tw-bg-gray-300 dark:hover:tw-bg-moon-600 tw-items-center tw-justify-center tw-font-semibold tw-text-inline tw-rounded-lg tw-select-none focus:tw-outline-none tw-px-2.5 tw-py-1.5 tw-inline-flex' /&gt;" Guid="49c478b3-8455-49cc-ba56-c898d8720100" ImageBase64="" InformativeScreenshot="99c9a3ba1da0d551d390ef08461b0f8a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reality Metaverse Price: RMV Live Price Chart &amp;amp; News | CoinGecko' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvTextArea="139, 672, 463, 18" CvTextArgument="API ID reality-metaverse" CvType="Text" DesignTimeRectangle="141, 649, 498, 65" FriendlyName="'API IDreality-metaverse'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='14' parentid='gecko-coin-page-container' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='tw-flex tw-justify-between tw-py-3' parentid='gecko-coin-page-container' tag='DIV' aaname='   ' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
                     <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayBefore="2" DisplayName="Click 'Max' - Chart" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Version="V3">
                       <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://www.coingecko.com/en/coins/six-network" CvElementArea="1091, 773, 69, 43" CvTextArea="1106, 786, 37, 17" CvTextArgument="Max" CvType="Button" DesignTimeRectangle="1092, 492, 67, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Max'" FullSelectorArgument="&lt;webctrl aaname='Max' parentid='general-tab-content' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Max' parentid='general-tab-content' tag='BUTTON' type='' class='tw-bg-white dark:tw-bg-white dark:tw-bg-opacity-5 dark:tw-text-white tw-h-8 tw--ml-px tw-relative tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-rounded-r-md tw-border-solid tw-border tw-cursor-pointer tw-border-gray-300 tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 dark:hover:tw-bg-opacity-10 focus:tw-z-10 focus:tw-outline-none focus:tw-bg-gray-200 dark:tw-border-opacity-10 dark:focus:tw-bg-opacity-10 dark:hover:tw-text-white graph-stats-btn graph-stats-btn-max' check:innerText='Max' /&gt;" Guid="ff0e429f-4b42-4bbc-a501-fcb4bb114d98" InformativeScreenshot="d77264202dd73ba2582240d35ec38807.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='SIX Network Price: SIX Live Price Chart &amp;amp; News | CoinGecko' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable BrowserURL="https://www.coingecko.com/en/coins/aptos" CvTextArea="1453, 392, 38, 17" CvTextArgument="Max" CvType="Text" DesignTimeRectangle="1455, 388, 36, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Max'" FullSelectorArgument="&lt;webctrl parentid='range-max' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='range-max' tag='SPAN' type='' class='tw-text-gray-700 dark:tw-text-moon-100 tw-font-semibold tw-text-sm tw-leading-5' aaname=' Max ' check:innerText='Max' /&gt;" Guid="12caab7a-47cd-4334-97ea-cc4f7efcac3a" InformativeScreenshot="2b39d279771b8a119183543f2948a28f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Aptos Price: APT Live Price Chart &amp;amp; News | CoinGecko' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CvTextArea="139, 445, 555, 33" CvTextArgument="Decentralized ETF Price Chart (DETF)" CvType="Text" DesignTimeRectangle="141, 442, 1018, 40" ElementType="Text" FriendlyName="'Decentralized ETF'" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='tw-text-gray-900 dark:tw-text-white tw-items-center tw-mt-4 tw-mb-2 tw-text-black tw-text-lg md:tw-text-2xl tw-font-bold tw-text-gray-900 dark:tw-text-white dark:tw-text-opacity-87 md:tw-mt-0' aaname=' Decentralized ETF Price Chart (DETF) ' check:innerText='Decentralized ETF Price Chart (DETF)' /&gt;" ImageBase64="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" SearchSteps="Selector" />
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvTextArea="1453, 392, 38, 17" CvTextArgument="Max" CvType="Text" DesignTimeRectangle="1443, 383, 61, 35" ElementType="Button" FriendlyName="'Max'" FullSelectorArgument="&lt;webctrl id='range-max' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='range-max' tag='BUTTON' type='button' class='gecko-button-group-item' aaname='  Max ' check:innerText='Max' /&gt;" SearchSteps="FuzzySelector, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NMouseScroll KeyModifiers="{x:Null}" ContinueOnError="True" Direction="Down" DisplayName="Mouse Scroll - Chart" sap:VirtualizedContainerService.HintSize="333.6,238.4" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="402b7412-1997-4899-b080-31448591750b" Version="V3">
-                      <uix:NMouseScroll.SearchedElement>
-                        <uix:SearchedElement>
-                          <uix:SearchedElement.Target>
-                            <uix:TargetAnchorable BrowserURL="https://www.coingecko.com/en/coins/lilai" DesignTimeRectangle="141, -44, 1058, 1208" DesignTimeScaleFactor="1.25" FriendlyName="'LilAI Price'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='general-tab-content' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='general-tab-content' tag='DIV' class='tw-col-span-8 lg:tw-pr-8' aaname='        ' check:innerText='LilAI Price Chart (LILAI)&amp;#xD;&amp;#xA;Price&amp;#xD;&amp;#xA;Market Cap&amp;#xD;&amp;#xA;Live Chart&amp;#xD;&amp;#xA;24h&amp;#xD;&amp;#xA;7d&amp;#xD;&amp;#xA;14d&amp;#xD;&amp;#xA;30d&amp;#xD;&amp;#xA;90d&amp;#xD;&amp;#xA;180d&amp;#xD;&amp;#xA;1y&amp;#xD;&amp;#xA;Max&amp;#xD;&amp;#xA;Linear' /&gt;" Guid="52f44315-1034-467c-af56-971609cda29a" ImageBase64="" InformativeScreenshot="cbcb461520d3c68ae8352bc3f06a5b96.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='LilAI Price: LILAI Live Price Chart &amp;amp; News | CoinGecko' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                          </uix:SearchedElement.Target>
-                          <uix:SearchedElement.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:SearchedElement.Timeout>
-                        </uix:SearchedElement>
-                      </uix:NMouseScroll.SearchedElement>
-                    </uix:NMouseScroll>
                     <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog - Chart" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="YES, NO" OptionsString="YES;NO" Title="Chart Decision">
                       <ui:InputDialog.Result>
                         <OutArgument x:TypeArguments="x:String">[str_ChartDecision]</OutArgument>
                       </ui:InputDialog.Result>
                     </ui:InputDialog>
                     <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Chart" DisplayName="Update Row Item - Chart" sap:VirtualizedContainerService.HintSize="333.6,192.8" sap2010:WorkflowViewState.IdRef="UpdateRowItem_5" Row="[CurrentRow]" Value="[str_ChartDecision]" />
+                    <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="API" DisplayName="Update Row Item - API" sap:VirtualizedContainerService.HintSize="333.6,192.8" sap2010:WorkflowViewState.IdRef="UpdateRowItem_6" Row="[CurrentRow]" Value="[str_API]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
@@ -226,7 +234,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Loop to be sure that user click YES or NO" Condition="[str_SaveWork = &quot;&quot;]" DisplayName="Do While - Save Work" sap:VirtualizedContainerService.HintSize="506.4,552.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Loop to be sure that user click YES or NO" Condition="[str_SaveWork = &quot;&quot;]" DisplayName="Do While - Save Work" sap:VirtualizedContainerService.HintSize="554.4,552.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376.8,384.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
@@ -249,7 +257,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleDoWhile>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="506.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="554.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">

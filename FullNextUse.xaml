@@ -1,8 +1,8 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="IfDETFTrueorFalse" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="dt_2_1to5" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="dt_3_Final" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>844,2361.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1140,2361.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -183,7 +183,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:JoinDataTables DataTable1="[dt_2_1to5]" DataTable2="[dt_2_1to5OLD]" DisplayName="Join Data Tables - 1to5 with 1to5OLD" sap:VirtualizedContainerService.HintSize="635.2,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_2_1to5]">
+    <ui:JoinDataTables DataTable1="[dt_3_Final]" DataTable2="[dt_2_1to5OLD]" DisplayName="Join Data Tables - dt_3_Final with 1to5OLD" sap:VirtualizedContainerService.HintSize="635.2,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_3_Final]">
       <ui:JoinDataTables.Arguments>
         <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
           <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -197,7 +197,7 @@
         </scg:List>
       </ui:JoinDataTables.Arguments>
     </ui:JoinDataTables>
-    <If sap2010:Annotation.AnnotationText="If merged DT doesn't contain any row it means that there is no new crypto to review so workflow should be terminated." Condition="[dt_2_1to5.RowCount = 0]" DisplayName="If - terminate" sap:VirtualizedContainerService.HintSize="635.2,407.2" sap2010:WorkflowViewState.IdRef="If_3">
+    <If sap2010:Annotation.AnnotationText="If merged DT doesn't contain any row it means that there is no new crypto to review so workflow should be terminated." Condition="[dt_3_Final.RowCount = 0]" DisplayName="If - terminate" sap:VirtualizedContainerService.HintSize="635.2,407.2" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -223,7 +223,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:FilterDataTable sap2010:Annotation.AnnotationText="If merged DT contains any rows that means there are new crypto to review, so this DT will be used in the next stage. Before that it has to be cleaned from unnecessary columns" DataTable="[dt_2_1to5]" DisplayName="Filter Data Table - new crypto" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="635.2,238.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[dt_2_1to5]" SelectColumnsMode="Remove">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="If merged DT contains any rows that means there are new crypto to review, so this DT will be used in the next stage. Before that it has to be cleaned from unnecessary columns" DataTable="[dt_3_Final]" DisplayName="Filter Data Table - new crypto" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="635.2,238.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[dt_3_Final]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -245,6 +245,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box - to review in stage 3" sap:VirtualizedContainerService.HintSize="635.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[dt_2_1to5.RowCount.ToString + &quot; crypto left to Start Date review&quot;]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box - to review in stage 3" sap:VirtualizedContainerService.HintSize="635.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[dt_3_Final.RowCount.ToString + &quot; crypto left to Start Date review&quot;]" />
   </Sequence>
 </Activity>
